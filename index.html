@@ -36,7 +36,8 @@
 			}
 
 			function play() {
-				recorder.getWAVBlob();
+				var wav = recorder.getWAVBlob();
+				console.log(wav);
 				recorder.play();
 			}
 		</script>
