@@ -11,7 +11,8 @@
 				height: 150px;
 			}
 			
-			.begin {
+			.begin,
+			.stop {
 				width: 300px;
 				height: 100px;
 				font-size: 36px;
@@ -21,16 +22,21 @@
 
 	<body>
 		<button class="begin" onclick="begin();">开始录音</button>
+		<button class="stop" onclick="stop();">停止录音</button>
+		<button class="stop" onclick="play();">播放录音</button>
 		<script>
 			var recorder = new Recorder();
 
 			function begin() {
-				recorder.start().then(() => {
-					// 开始录音
-				}, (error) => {
-					// 出错了
-					console.log(`${error.name} : ${error.message}`);
-				});
+				recorder.start();
+			}
+
+			function stop() {
+				recorder.stop();
+			}
+
+			function play() {
+				recorder.play();
 			}
 		</script>
 	</body>
